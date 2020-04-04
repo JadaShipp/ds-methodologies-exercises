@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, QuantileTransformer, PowerTransformer, RobustScaler, MinMaxScaler
 
-def split_my_data(df, train_pct=0.70, seed=123):
+def split_data(df, train_pct=0.75, seed=123):
     train, test = train_test_split(df, train_size=train_pct, random_state=seed)
     return train, test
 
