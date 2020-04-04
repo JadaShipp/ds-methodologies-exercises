@@ -8,6 +8,11 @@ def split_data(df, train_pct=0.75, seed=123):
     return train, test
 
 def create_train_test_variables(df):
+    '''
+    Takes in a dataframe and splits the features into X and y
+    train and test variables
+    Returns each as a dataframe
+    '''
     train, test = split_data(df)
     X_train = train[['tenure']]
     X_test = test[['tenure']]
@@ -31,6 +36,12 @@ def standard_scaler(X_train, X_test):
     return scaler, X_train_scaled, X_test_scaled
 
 def merge_standard_scaled_to_original(train):
+    '''
+    Takes in a train dataframe and merges it with the original
+    unscaled dataframe then changes the scaled data column name
+    to reflect what it is
+    Returns the original dataframe with a new column
+    '''
     X_train = train[['tenure']]
     scaler = StandardScaler().fit(X_train)
     X_train_scaled = (pd.DataFrame(scaler.transform(X_train), 
