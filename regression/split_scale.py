@@ -30,6 +30,14 @@ def standard_scaler(X_train, X_test):
                      index=X_test.index))
     return scaler, X_train_scaled, X_test_scaled
 
+def merge_standard_scaled_to_original(train):
+    X_train = train[['tenure']]
+    scaler = StandardScaler().fit(X_train)
+    X_train_scaled = (pd.DataFrame(scaler.transform(X_train), 
+                      columns=X_train.columns, 
+                      index=X_train.index))
+    df_plus_train = train.merge(X_train_scaled, how='inner', on=None, left_index=True, right_index=True)
+    return df_plus_train
 
 
 def scale_inverse(scaler, X_train_scaled, X_test_scaled):
@@ -128,9 +136,7 @@ def iqr_robust_scaler(X_train, X_test):
 
 
 
-# def merge_scaled_to_original(train):
-#     df_plus_train = train.merge(X_train_scaled, how='inner', on=None, left_index=True, right_index=True)
-#     return df_plus_train
+
 
 # def adjust_column_names(df):
 #     df_plus_train.columns = ['customer_id', 'monthly_charges', 'tenure', 'total_charges', 'contract_type',
