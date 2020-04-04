@@ -7,6 +7,14 @@ def split_data(df, train_pct=0.75, seed=123):
     train, test = train_test_split(df, train_size=train_pct, random_state=seed)
     return train, test
 
+def create_train_test_variables(df):
+    train, test = split_data(df)
+    X_train = train[['tenure']]
+    X_test = test[['tenure']]
+    y_train = [['total_charges']]
+    y_test = [['total_charges']]
+    return X_train, X_test, y_train, y_test
+
 
 def standard_scaler(X_train, X_test):
     """
@@ -117,3 +125,14 @@ def iqr_robust_scaler(X_train, X_test):
                      columns=X_test.columns,
                      index=X_test.index))
     return scaler, X_train_scaled, X_test_scaled
+
+
+
+# def merge_scaled_to_original(train):
+#     df_plus_train = train.merge(X_train_scaled, how='inner', on=None, left_index=True, right_index=True)
+#     return df_plus_train
+
+# def adjust_column_names(df):
+#     df_plus_train.columns = ['customer_id', 'monthly_charges', 'tenure', 'total_charges', 'contract_type',
+#     'tenure_scaled']
+#     return df_plus_train
