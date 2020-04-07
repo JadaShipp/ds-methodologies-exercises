@@ -13,18 +13,18 @@ import wrangle
 import split_scale
 
 
-def select_kbest(X_train, y_train, k ):
+def select_kbest(X, y, k ):
     f_selector = SelectKBest(f_regression, k = k)
-    f_selector.fit(X_train, y_train)
-    f_selector.transform(X_train)
+    f_selector.fit(X, y)
+    f_selector.transform(X)
     f_support = f_selector.get_support()
-    f_feature = X_train.loc[:,f_support].columns.tolist()
+    f_feature = X.loc[:,f_support].columns.tolist()
     return f_feature
 
-def rfe(X_train, y_train, k):
+def select_rfe(X, y, k):
     lm = LinearRegression()
     rfe = RFE(lm, k)
-    rfe.fit_transform(X_train, y_train)
+    rfe.fit_transform(X, y)
     mask = rfe.support_
-    rfe_features = X_train.loc[:,mask].columns.tolist()
+    rfe_features = X.loc[:,mask].columns.tolist()
     return rfe_features
