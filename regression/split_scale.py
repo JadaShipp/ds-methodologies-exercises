@@ -7,17 +7,17 @@ def split_data(df, train_pct=0.75, seed=123):
     train, test = train_test_split(df, train_size=train_pct, random_state=seed)
     return train, test
 
-def create_train_test_variables(df):
+def create_train_test_variables(df, X_col, target):
     '''
     Takes in a dataframe and splits the features into X and y
     train and test variables
     Returns each as a dataframe
     '''
     train, test = split_data(df)
-    X_train = train[['tenure']]
-    X_test = test[['tenure']]
-    y_train = [['total_charges']]
-    y_test = [['total_charges']]
+    X_train = train[[X_col]]
+    X_test = test[[X_col]]
+    y_train = [[target]]
+    y_test = [[target]]
     return X_train, X_test, y_train, y_test
 
 
