@@ -1,3 +1,21 @@
+# Zillow Regression Project
+- The overall goal of this project is to demonstrate understanding of the data science prooject workflow and pipeline. This notebook and repo is meant to display:
+> * Planning
+> * Data Aquisition
+> * Preparation
+> * Exploration
+> * Modeling
+> * Delivery
+
+- The premise of this project is to predict the value of a home based on three variables:
+> * Square root
+> * Number of bedrooms
+> * Number of bathrooms
+
+
+
+
+
 |    Variable    |        Data Type       |                                  Description                                 |
 |:--------------:|:----------------------:|:----------------------------------------------------------------------------:|
 | square_feet    | 14989 non-null float64 | The number of square feet in each single family unit                         |
