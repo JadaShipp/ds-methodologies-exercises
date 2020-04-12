@@ -29,7 +29,7 @@ def plot_distributions():
     sns.despine(left=True)
 
     ax1 = sns.distplot(a, kde=True, color="m", ax=axes[0])
-    ax2 = sns.distplot(b, kde=True, color="r", ax=axes[1])
+    ax2 = sns.distplot(b, kde=True, color="b", ax=axes[1])
     ax3 = sns.distplot(c, kde=True, color="g", ax=axes[2])
 
     ax1.title.set_text('LA County')
