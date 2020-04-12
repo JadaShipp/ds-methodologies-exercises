@@ -47,5 +47,4 @@
 
 Note: To re-create this project, these will need their own env.py file Generating the URL to access the SQL server. All other modules and functions are included in the repository.
 
-[Link to presentation] https://docs.google.com/presentation/d/1PCrQE2w1GpMQAsjoa4VAxyXryHRI4nswdSh7CBtTM7A/edit?usp=sharing
-
+[https://docs.google.com/presentation/d/1PCrQE2w1GpMQAsjoa4VAxyXryHRI4nswdSh7CBtTM7A/edit?usp=sharing]
