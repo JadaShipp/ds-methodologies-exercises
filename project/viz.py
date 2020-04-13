@@ -28,9 +28,10 @@ def plot_distributions():
     f, axes = plt.subplots(1, 3, figsize=(14, 5), sharex=True)
     sns.despine(left=True)
     
-    ax1 = sns.distplot(a, kde=True, color="m", ax=axes[0])
-    ax2 = sns.distplot(b, kde=True, color="b", ax=axes[1])
-    ax3 = sns.distplot(c, kde=True, color="g", ax=axes[2])
+ 
+    ax1 = sns.distplot(a, kde=True, color="m",bins=300, ax=axes[0])
+    ax2 = sns.distplot(b, kde=True, color="b",bins=300, ax=axes[1])
+    ax3 = sns.distplot(c, kde=True, color="g",bins=300, ax=axes[2])
 
     ax1.title.set_text('LA County')
     ax2.title.set_text('Orange County')
@@ -41,6 +42,6 @@ def plot_distributions():
     ax3.set_ylabel('Number of Homes')
 
 
-    plt.xlim(0, 0.2)
-    plt.subplots_adjust(bottom=10, top = 12, left = 5, right = 6)
+    plt.xlim(0, 0.04)
+    plt.subplots_adjust(bottom=3, top = 4, left = 5, right = 6)
     return f
