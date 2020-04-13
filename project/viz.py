@@ -25,7 +25,7 @@ def plot_distributions():
     VC = LAC[['tax_rate']]
     c = VC.tax_rate
 
-    f, axes = plt.subplots(3, 1, figsize=(7, 7), sharex=True)
+    f, axes = plt.subplots(3, 1, figsize=(4, 4), sharex=True)
     sns.despine(left=True)
 
     ax1 = sns.distplot(a, kde=True, color="m", ax=axes[0])
@@ -41,6 +41,6 @@ def plot_distributions():
     ax3.set_ylabel('Number of Homes')
 
 
-    plt.xlim(0, 0.4)
+    plt.xlim(0, 0.2)
     plt.subplots_adjust(bottom=10, top = 12)
     return f
