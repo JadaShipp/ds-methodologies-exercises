@@ -42,5 +42,5 @@ def plot_distributions():
 
 
     plt.xlim(0, 0.2)
-    plt.subplots_adjust(bottom=10, top = 12, left = 5, right = 5)
+    plt.subplots_adjust(bottom=10, top = 12, left = 5, right = 6)
     return f
