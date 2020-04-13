@@ -25,9 +25,9 @@ def plot_distributions():
     VC = LAC[['tax_rate']]
     c = VC.tax_rate
 
-    f, axes = plt.subplots(3, 1, figsize=(4, 4), sharex=True)
+    f, axes = plt.subplots(1, 3, figsize=(14, 5), sharex=True)
     sns.despine(left=True)
-
+    
     ax1 = sns.distplot(a, kde=True, color="m", ax=axes[0])
     ax2 = sns.distplot(b, kde=True, color="b", ax=axes[1])
     ax3 = sns.distplot(c, kde=True, color="g", ax=axes[2])
@@ -42,5 +42,5 @@ def plot_distributions():
 
 
     plt.xlim(0, 0.2)
-    plt.subplots_adjust(bottom=10, top = 12)
+    plt.subplots_adjust(bottom=10, top = 12, left = 5, right = 5)
     return f
