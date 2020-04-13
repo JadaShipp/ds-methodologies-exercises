@@ -24,3 +24,4 @@ def min_max_scaler(X_train, X_test):
                      columns=X_test.columns,
                      index=X_test.index))
     return scaler, X_train_scaled, X_test_scaled
+
