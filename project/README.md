@@ -33,7 +33,7 @@
 |    Variable    |        Data Type       |                                  Description                                 |
 |:--------------:|:----------------------:|:----------------------------------------------------------------------------:|
 | square_feet    | 14989 non-null float64 | The number of square feet in each single family unit                         |
-| taxes          | 14989 non-null float64 | The amount of tax paid on the single family unit                                          |
+| taxes          | 14989 non-null float64 | The value of the single family unit                                          |
 | home_value     | 14989 non-null float64 | The value of the single family unit                                          |
 | bedroom_count  | 14989 non-null float64 | The number of bedrooms in each single family unit                            |
 | bathroom_count | 14989 non-null float64 | The number of bathrooms in each single family unit                           |
