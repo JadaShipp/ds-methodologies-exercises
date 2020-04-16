@@ -43,7 +43,7 @@ def label_encode_species(train, test):
 def prep_iris(iris_df):
     iris_df = drop_iris_columns(iris_df)
     iris_df = rename_colums(iris_df)
-    train, test = train_test_split(iris_df, random_state=123, train_size=.8)
+    train, test = train_test_split(iris_df, random_state=123, train_size=.7)
     return label_encode_species(train,test)
 
 
