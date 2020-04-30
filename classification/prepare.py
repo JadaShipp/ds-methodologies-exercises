@@ -8,6 +8,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, MinMaxScaler
 import warnings
 warnings.filterwarnings("ignore")
+import seaborn as sns
 
 
 
