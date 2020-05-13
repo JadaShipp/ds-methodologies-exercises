@@ -72,7 +72,7 @@ def get_store_data():
         sales_df = get_df('sales')
         
     if os.path.isfile('big_df.csv'):
-        df = pd.read_csv('big_df.csv', index_col = 0)
+        df = pd.read_csv('big_df.csv', parse_dates=True, index_col='sale_date')
         return df
     else:
         # merge all of the DataFrames into one
@@ -80,8 +80,8 @@ def get_store_data():
         df = pd.merge(df, items_df, left_on='item', right_on='item_id').drop(columns={'item'})
 
         # convert sale_date to DateTime Index
-        # df['sale_date'] = pd.to_datetime(df.sale_date)
-        # df = df.sort_index()
+        df['sale_date'] = pd.to_datetime(df.sale_date)
+        df = df.set_index('sale_date').sort_index()
 
         # write merged DateTime df with all data to directory for future use
         df.to_csv('big_df.csv')
@@ -91,8 +91,6 @@ def get_store_data():
 
 # Function that checks for a csv, and if it doesn't exist it reads url and creates one
 # Function returns the df with a DateTime Index by using parse_dates=True
-
-
 
 def german_energy_csv():
     """
