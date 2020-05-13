@@ -21,7 +21,6 @@ import requests
 import os
 from datetime import timedelta, datetime as dt
 
-from acquire_walkthrough import get_store_data
 
 # Function for numeric distributions
 
