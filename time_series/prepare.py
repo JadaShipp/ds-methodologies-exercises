@@ -37,14 +37,14 @@ def numeric_hists(df, bins=20):
 
 # Function to acquire and prep store df
 
-def prepped_store_df():
+def prepped_store_df(df):
     """
     Function to acquire and prepare
     store dataframe and show
     distributions for numeric columns
     """
-    # Acquire the df
-    df = df.get_store_data()
+    # # Acquire the df
+    # df = df.get_store_data()
     
     # Create date part columns
     df['month'] = df.index.month
